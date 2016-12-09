@@ -11,7 +11,7 @@ export default class App extends Component {
 					<ul>
 						<li><Link to="drums">Drums</Link></li>
 					</ul>
-					<Match pattern="/drums" component={ Drums } />
+					<Match pattern="*drums" component={ Drums } />
 				</div>
 			</BrowserRouter>
 		)
