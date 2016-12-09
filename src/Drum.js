@@ -14,7 +14,7 @@ export default class Drum extends React.Component {
 	play = () => {
 
 		const { type } = this.props
-		const audio = new Audio(`/sounds/${type}.wav`)
+		const audio = new Audio(`sounds/${type}.wav`)
 
 		audio.addEventListener('ended', () => {
 			audio.currentTime = 0
@@ -57,7 +57,7 @@ export default class Drum extends React.Component {
 		const { type, shake } = this.props
 		const { shaking } = this.state
 		const classes = classNames('drum', {
-			[`shake shake-${shake}`]: shaking
+			[`shake shake-${shake} shake-constant`]: shaking
 		})
 
 		return (

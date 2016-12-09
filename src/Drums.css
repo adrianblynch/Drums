@@ -10,9 +10,42 @@
 	flex-basis: 0;
 	flex-grow: 1;
 	text-align: center;
-	border: solid 1px #ccc;
+	border: solid 10px #366bc1;
 	border-radius: 10px;
 	padding: 20px;
+	margin: 5px;
 	cursor: pointer;
 	user-select: none;
+	background-color: #0b3f93;
+	color: white;
+	font-weight: bold;
+}
+
+.drums__show-options {
+	border: solid 1px #ccc;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+.drums__options {
+	display: flex;
+	flex-direction: column;
+}
+
+.drums__option--hidden {
+	display: none;
+}
+
+.drums__option {
+	display: flex;
+	justify-content: center;
+	border: solid 1px #ccc;
+}
+
+.drums__option label,
+.drums__option input {
+	flex-basis: 0;
+	flex-grow: 1;
 }

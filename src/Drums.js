@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import Drum from './Drum'
 import './Drums.css'
 
@@ -18,15 +19,55 @@ export default class App extends Component {
 				{ type: 'snare',   shake: 'opacity',    hotKey: 'g' },
 				{ type: 'tink',    shake: 'crazy',      hotKey: 'h' },
 				{ type: 'tom',     shake: 'hard',       hotKey: 'i' }
-			]
+			],
+			showOptions: false
 		}
+	}
+
+	handleChange = (e) => {
+
+		const { name, value } = e.target
+
+		this.state.drums.forEach(drum => {
+			if (drum.type === name) {
+				drum.hotKey = value
+			}
+			// Yeah, no ideal but it works and I'm about to go to bed!
+			this.forceUpdate()
+		})
+	}
+
+	handleClick = () => {
+		this.setState({ showOptions: !this.state.showOptions })
 	}
 
 	render() {
 
+		const { showOptions } = this.state
+		const optionsClasses = classNames('drums__options', { 'drums__option--hidden': !showOptions })
+
 		return (
-			<div className="drums">
-				{ this.state.drums.map(drum => <Drum key={ drum.type } { ...drum } />) }
+			<div>
+				<div className="drums">
+					{ this.state.drums.map(drum => <Drum key={ drum.type } { ...drum } />) }
+				</div>
+
+				<hr />
+
+				<div className="drums__show-options" onClick={ this.handleClick }>
+					Options <span>{ showOptions ? '➖' : '➕' }</span>
+				</div>
+
+				<div className={ optionsClasses }>
+					{
+						this.state.drums.map(drum =>
+							<div className="drums__option" key={ drum.type }>
+								<label>{ drum.type }</label>
+								<input name={ drum.type } onChange={ this.handleChange } defaultValue={ drum.hotKey } />
+							</div>
+						)
+					}
+				</div>
 			</div>
 		)
 	}

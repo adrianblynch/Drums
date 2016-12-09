@@ -3,12 +3,11 @@ import Drums from './Drums'
 
 export default class App extends Component {
 
-  render() {
-
-    return (
-      <div>
-        <Drums />
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<Drums />
+			</div>
+		)
+	}
 }
