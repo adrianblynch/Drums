@@ -1,0 +1,18 @@
+.drums {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: solid 1px #ccc;
+	border-radius: 10px;
+}
+
+.drum {
+	flex-basis: 0;
+	flex-grow: 1;
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	cursor: pointer;
+	user-select: none;
+}
