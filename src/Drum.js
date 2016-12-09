@@ -52,8 +52,6 @@ export default class Drum extends React.Component {
 
 	render() {
 
-		console.log(JSON.stringify(this.state, null, 2))
-
 		const { type, shake } = this.props
 		const { shaking } = this.state
 		const classes = classNames('drum', {

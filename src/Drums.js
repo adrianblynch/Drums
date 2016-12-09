@@ -32,7 +32,7 @@ export default class App extends Component {
 			if (drum.type === name) {
 				drum.hotKey = value
 			}
-			// Yeah, no ideal but it works and I'm about to go to bed!
+			// Yeah, not ideal but it works and I'm about to go to bed!
 			this.forceUpdate()
 		})
 	}
@@ -63,7 +63,12 @@ export default class App extends Component {
 						this.state.drums.map(drum =>
 							<div className="drums__option" key={ drum.type }>
 								<label>{ drum.type }</label>
-								<input name={ drum.type } onChange={ this.handleChange } defaultValue={ drum.hotKey } />
+								<input
+									name={ drum.type }
+									onChange={ this.handleChange }
+									defaultValue={ drum.hotKey }
+									maxLength="1"
+								/>
 							</div>
 						)
 					}
