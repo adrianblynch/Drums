@@ -1,7 +1,5 @@
-# JavaScript30++
+# JavaScript30 - Drum Kit
 
-Taking each of the videos of [JS30](https://javascript30.com/) and trying them out in React before seeing Wes's version.
-
-## 01 - Drum Kit
+A React based version of [JS30's](https://javascript30.com/) Drum Kit video.
 
 Thanks [CSShake](https://github.com/elrumordelaluz/csshake)
